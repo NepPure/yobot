@@ -78,7 +78,8 @@ def main():
         sys.exit()
 
     cqbot = CQHttp(access_token=token,
-                   enable_http_post=False)
+                   secret="he1yRDKPvEUGAUug",
+                   enable_http_post=True)
     sche = AsyncIOScheduler()
     bot = yobot.Yobot(data_path=basedir,
                       scheduler=sche,
@@ -94,7 +95,7 @@ def main():
             reply = await bot.proc_async(context)
         else:
             reply = None
-        if isinstance(reply, str) and reply != "":
+        if isinstance(reply, str) and reply != "":            
             return {'reply': reply,
                     'at_sender': False}
         else:
