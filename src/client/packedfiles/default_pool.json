@@ -4,9 +4,9 @@
     },
     "settings":{
         "combo": 10,
-        "day_limit": 2,
-        "auto_update": false,
-        "shuffle": false
+        "day_limit": 10,
+        "auto_update": true,
+        "shuffle": true
     },
     "pool": {
         "star3": {
