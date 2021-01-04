@@ -76,8 +76,10 @@ class Miner:
         cmd = cmd.lstrip()
         if cmd.isdigit() and 15001 >= int(cmd) >= 1:
             rank = int(cmd)
-            reply = "当前排名为:{}\n最高排名奖励还剩 {} 钻\n历届最高排名还剩 {} 钻".format(
-                rank, self.get_this_season(rank), self.get_all_season(rank))
+            stop = self.get_this_season(rank)
+            atop = self.get_all_season(rank)
+            reply = "当前排名为:{}\n最高排名奖励还剩 {} 钻\n历届最高排名还剩 {} 钻\n共 {} 钻".format(
+                rank, stop, atop, stop+atop)
             return reply
         else:
             reply = "请输入1～15001之间的整数"
